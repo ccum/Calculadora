@@ -3,18 +3,26 @@ package calculadora;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CalculadoraTest {
 
 	
-	Calculadora cal;
+	static Calculadora cal;
+	
+	@BeforeClass
+	public static void befoeClass() {
+		System.out.println("metodo  before class");
+		cal = new Calculadora();
+	}
 	
 	@Before
 	public void before() {
 		System.out.println("before");
-		cal = new Calculadora();
+		cal.clear();
 	}
 	
 	@After
@@ -50,5 +58,10 @@ public class CalculadoraTest {
 	@Test(timeout = 1000)
 	public void testOperationOptima() {
 		cal.operationOptima();
+	}
+	
+	@AfterClass
+	public static void affterClass() {
+		System.out.println("affterClass");
 	}
 }
