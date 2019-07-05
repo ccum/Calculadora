@@ -8,7 +8,7 @@ public class AssertTest {
 
 	@Test
 	public void test() {
-		//assertEquals("no es corecto",2, 4);
+		assertEquals("es corecto",2, 2);
 		
 	}
 
